@@ -6,13 +6,13 @@ import (
 	"io"
 	"testing"
 
-	logging "github.com/ipfs/go-log"
-	ic "github.com/libp2p/go-libp2p-crypto"
-	pb "github.com/libp2p/go-libp2p-crypto/pb"
-	peer "github.com/libp2p/go-libp2p-peer"
-	testutil "github.com/libp2p/go-testutil"
+	logging "github.com/dms3-fs/go-log"
+	ic "github.com/dms3-p2p/go-p2p-crypto"
+	pb "github.com/dms3-p2p/go-p2p-crypto/pb"
+	peer "github.com/dms3-p2p/go-p2p-peer"
+	testutil "github.com/dms3-p2p/go-testutil"
 
-	ma "github.com/multiformats/go-multiaddr"
+	ma "github.com/dms3-mft/go-multiaddr"
 )
 
 var log = logging.Logger("boguskey")
@@ -43,7 +43,7 @@ func (pk TestBogusPublicKey) Equals(k ic.Key) bool {
 }
 
 // Raw returns the raw bytes of the key (not wrapped in the
-// libp2p-crypto protobuf).
+// dms3-p2p-crypto protobuf).
 func (pk TestBogusPublicKey) Raw() ([]byte, error) {
 	return pk, nil
 }
@@ -81,7 +81,7 @@ func (sk TestBogusPrivateKey) Equals(k ic.Key) bool {
 }
 
 // Raw returns the raw bytes of the key (not wrapped in the
-// libp2p-crypto protobuf).
+// dms3-p2p-crypto protobuf).
 func (sk TestBogusPrivateKey) Raw() ([]byte, error) {
 	return sk, nil
 }
